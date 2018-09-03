@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+
+    {{ data.csrf_token }}
+
+    {{ data.user_name.label }}
+    <p>{{ data.user_name }}</p>
+{# 显示错误信息 #}
+    {% for msg in data.user_name.errors %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+
+
+
+
+    {{ data.password.label }}
+    <p>{{ data.password }}</p>
+    {% for msg in data.password.errors %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+
+    {{ data.password2.label }}
+    <p>{{ data.password2 }}</p>
+    {% for msg in data.password2.errors %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+
+
+    {{ data.sbt }}
+
+
+</form>
+</body>
+</html>

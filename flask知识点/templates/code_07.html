@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<div>{{ data.name }}</div>
+<div>{{ data.mylist }}</div>
+<br>
+<hr>
+<div>{{ data.age }}年龄</div>
+{# filter 不需要导包，内置的 #}
+<p>{{ [1,2,3,4,5,6,34,23,2,] | first }}</p>
+<p>{{ [1,2,3,4,5,6,34,23,2,] | sum }}</p>
+<p>{{ [1,2,3,4,5,6,34,23,2,] | li }}</p>
+
+<p>这是父类的头部内容hslafl</p>
+
+{% block contentBloc%}
+<p>这是父类的中间内容hfslafja</p>
+{% endblock %}
+
+{% block contentfootBlock %}
+<p>我也是父类的中间下面内容</p>
+{% endblock %}
+
+</body>
+</html>

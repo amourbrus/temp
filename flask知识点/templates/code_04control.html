@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .li1{
+            background-color: red;
+        }
+        .li2{
+            background-color: blue;
+        }
+{#        id>class>普通标签 #}
+        li{
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<body>
+<h1>flask 特有的变量和函数 </h1>
+<p>config---{{ config.DEBUG }}</p>
+<p>request url lower---{{ request.url }}</p>
+<p>g---{{ g.name }}</p>
+
+{% for item in mylist %}
+    {% if loop.index == 1 %}
+        <li class="li1">{{ item.value }} </li>
+    {% elif loop.index == 2 %}
+        <li class="li2">{{ item.value }}</li>
+    {% else %}
+        <li >{{ item.value }}</li>
+    {% endif %}
+{% endfor %}
+
+{% for msgs in get_flashed_messages() %}
+<p>{{ msgs }}</p>
+{#{{ endfor }}#}
+{% endfor %}
+
+</body>
+</html>
